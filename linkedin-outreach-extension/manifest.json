@@ -18,16 +18,8 @@
     "default_popup": "popup.html"
   },
   "minimum_chrome_version": "88",
-  "permissions": [
-    "tabs",
-    "storage",
-    "activeTab",
-    "downloads",
-    "scripting"
-  ],
-  "host_permissions": [
-    "https://*.linkedin.com/*"
-  ],
+  "permissions": ["tabs", "storage", "activeTab", "downloads", "scripting"],
+  "host_permissions": ["https://*.linkedin.com/*"],
   "background": {
     "service_worker": "background.js",
     "type": "module"

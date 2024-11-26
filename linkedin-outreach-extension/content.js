@@ -1,8 +1,8 @@
 const ACTIONS = {
   // IMPORTANT Copy this as-is from utils/actions.js
   BACKGROUND_ACTIONS: {
-    PROFILE_PROCESSED: "profileProcessed",
-    PROFILE_READY: "profileReady",
+    PROFILE_PROCESSED: 'profileProcessed',
+    PROFILE_READY: 'profileReady',
   },
 };
 
@@ -19,7 +19,7 @@ class LinkedInProfileHandler {
         this.handleProfile()
           .then(() => sendResponse({ success: true }))
           .catch((error) =>
-            sendResponse({ success: false, error: error.message })
+            sendResponse({ success: false, error: error.message }),
           );
         return true; // Keep message channel open
       }
@@ -57,7 +57,7 @@ class LinkedInProfileHandler {
   async waitForPageLoad() {
     return new Promise((resolve) => {
       const checkReadyState = () => {
-        if (document.readyState === "complete") {
+        if (document.readyState === 'complete') {
           resolve();
         } else {
           setTimeout(checkReadyState, 100);
@@ -71,24 +71,26 @@ class LinkedInProfileHandler {
   async sendMessage() {
     // Check if we have the profile data
     if (!this.currentProfile) {
-      throw new Error("No profile data available");
+      throw new Error('No profile data available');
     }
 
     // Find and click the Message button
     const messageBtn = document.querySelector(
-      "button[data-anchor-send-inmail]"
+      'button[data-anchor-send-inmail]',
     );
     if (!messageBtn) {
-      throw new Error("Message button not found");
+      throw new Error('Message button not found');
     }
     messageBtn.click();
     await this.sleep(1000);
 
     // Find and fill the message textarea
-    const subjectEl = document.querySelector('input[aria-label="Subject (required)"]');
+    const subjectEl = document.querySelector(
+      'input[aria-label="Subject (required)"]',
+    );
     const textareaEl = document.querySelector('textarea[name="message"]');
     if (!subjectEl || !textareaEl) {
-      throw new Error("Subject or message textarea not found");
+      throw new Error('Subject or message textarea not found');
     }
 
     // Get the full message from the current profile data
@@ -99,10 +101,10 @@ class LinkedInProfileHandler {
 
     // Fill the subject in the input
     subjectEl.value = subject;
-    subjectEl.dispatchEvent(new Event("input", { bubbles: true }));
+    subjectEl.dispatchEvent(new Event('input', { bubbles: true }));
     // Fill the subject and message in the textarea
     textareaEl.value = message;
-    textareaEl.dispatchEvent(new Event("input", { bubbles: true }));
+    textareaEl.dispatchEvent(new Event('input', { bubbles: true }));
 
     // Optional: Add auto-send functionality
     // const sendButton = document.querySelector('button[type="submit"]');
@@ -133,12 +135,12 @@ class LinkedInProfileHandler {
 
   getSubject(text) {
     const subjectMatch = text.match(/\*\*Subject Line\*\*:\s*(.*?)(?=\n|$)/);
-    return subjectMatch ? subjectMatch[1].trim() : "";
+    return subjectMatch ? subjectMatch[1].trim() : '';
   }
 
   getMessage(text) {
     const messageMatch = text.match(/\*\*Message Body\*\*:\s*\n\n([\s\S]*?)$/);
-    return messageMatch ? messageMatch[1].trim() : "";
+    return messageMatch ? messageMatch[1].trim() : '';
   }
 }
 

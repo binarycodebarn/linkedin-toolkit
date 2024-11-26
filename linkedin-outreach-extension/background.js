@@ -1,9 +1,9 @@
-import { ACTIONS } from "./utils/actions.js";
-import { convertToSalesNavigatorURL } from "./utils/url-converter.js";
+import { ACTIONS } from './utils/actions.js';
+import { convertToSalesNavigatorURL } from './utils/url-converter.js';
 
 const COLUMNS = {
-  LINKEDIN_PROFILE: "Personal Linkedin",
-  OUTREACH_MESSAGE: "Outreach Message",
+  LINKEDIN_PROFILE: 'Personal Linkedin',
+  OUTREACH_MESSAGE: 'Outreach Message',
 };
 
 const STATE = {
@@ -44,11 +44,11 @@ chrome.runtime.onMessage.addListener(async (message) => {
         break;
 
       default:
-        console.log("Unknown action received:", message.action);
+        console.log('Unknown action received:', message.action);
         break;
     }
   } catch (error) {
-    console.error("Background worker error:", error);
+    console.error('Background worker error:', error);
   }
   return false; // Required for async message handling
 });
@@ -75,13 +75,13 @@ async function processNextProfile() {
     STATE.currentTabId = tab.id;
     STATE.currentIndex++;
   } catch (error) {
-    console.error("Error processing profile:", error);
+    console.error('Error processing profile:', error);
   }
 }
 
 // Listen for tab updates, this will send a message to the content script
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (tabId === STATE.currentTabId && changeInfo.status === "complete") {
+  if (tabId === STATE.currentTabId && changeInfo.status === 'complete') {
     // Tab has finished loading
     const currentProfile = STATE.profiles[STATE.currentIndex - 1];
 

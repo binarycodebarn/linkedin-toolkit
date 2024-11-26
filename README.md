@@ -7,11 +7,12 @@ Welcome to LinkedIn Tools! Because who doesn't love automating their LinkedIn ou
 Here's a quick rundown of what each folder does:
 
 ### linkedin-outreach/
+
 This is your go-to folder for automating LinkedIn outreach messages. It contains scripts and configurations to help you generate personalized messages and process Excel files with LinkedIn profiles.
 
 ### linkedin-outreach-extension/
-This folder contains a Chrome extension to automate LinkedIn outreach directly from your browser. 
 
+This folder contains a Chrome extension to automate LinkedIn outreach directly from your browser.
 
 ## 📬 Important Notes
 
