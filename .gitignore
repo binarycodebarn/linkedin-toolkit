@@ -58,9 +58,6 @@ lerna-debug.log*
 .cache
 
 # Framework build outputs
-.next
-.nuxt
-.vuepress/dist
 public
 
 # Serverless directories

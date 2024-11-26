@@ -24,7 +24,7 @@ A totally-not-robotic way to automate your LinkedIn outreach while keeping it pe
 
 ## Important Notes
 
-- 🚫 Don't be spammy - nobody likes that
+- 🚫 Don't spam - nobody likes that
 - 🎨 Customize your messages - templates are just starting points
 - 🐢 Start slow - Rome wasn't built in a day, and neither should your network
 
