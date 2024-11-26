@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./popup.css" />
+    <title>LinkedIn Outreach</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>LinkedIn Outreach</h1>
+
+      <div class="upload-section">
+        <input
+          type="file"
+          id="excelFile"
+          accept=".xlsx, .xls"
+          class="visually-hidden"
+          aria-label="Upload Excel file"
+        />
+        <label for="excelFile" class="file-label" role="button" tabindex="0">
+          Choose Excel File
+        </label>
+        <div id="status" class="status" aria-live="polite"></div>
+        <div id="loadedCount" class="status" aria-live="polite"></div>
+      </div>
+
+      <div class="controls">
+        <button id="start" class="button" disabled aria-busy="false">
+          Start Outreach
+        </button>
+        <div class="loader hidden" role="status"></div>
+      </div>
+
+      <div id="error" class="error hidden" role="alert"></div>
+    </div>
+
+    <script src="/lib/xlsx.min.js" type="text/javascript"></script>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
