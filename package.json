@@ -1,0 +1,18 @@
+{
+  "name": "linkedin-tools",
+  "version": "1.0.0",
+  "description": "Welcome to LinkedIn Tools! Because who doesn't love automating their LinkedIn outreach and making life a little easier? 😉",
+  "scripts": {
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^7.0.0",
+    "prettier": "^2.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
+    }
+  }
+}
