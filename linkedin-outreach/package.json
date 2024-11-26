@@ -1,0 +1,31 @@
+{
+  "name": "linkedin-outreach",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node script/index.mjs",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dotenv": "^16.4.5",
+    "inquirer": "^12.1.0",
+    "openai": "^4.73.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "husky": "^7.0.0",
+    "prettier": "^2.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
+    }
+  }
+}
