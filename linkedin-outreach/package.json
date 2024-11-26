@@ -5,8 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node script/index.mjs",
-    "format": "prettier --write .",
-    "prepare": "husky install"
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -20,12 +19,6 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "husky": "^7.0.0",
     "prettier": "^2.8.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format"
-    }
   }
 }
