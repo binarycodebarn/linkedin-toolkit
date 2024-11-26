@@ -42,7 +42,7 @@ const selectPerson = async () => {
 const getPromptGenerator = (person) => {
   switch (person) {
     case MENU_OPTIONS.CONNECTION_REQUEST:
-      return generateConnectionPrompt
+      return generateConnectionPrompt;
     case MENU_OPTIONS.ADEEL:
       return generatePromptAdeel;
     case MENU_OPTIONS.JAHANZAIB:
