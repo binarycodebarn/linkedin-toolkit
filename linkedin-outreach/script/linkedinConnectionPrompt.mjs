@@ -6,7 +6,7 @@ export const generateConnectionPrompt = (
   companyBio,
   companyOverview,
 ) => `
-  You are a professional copywriter creating concise and engaging LinkedIn connection request messages. Use the input information below to personalize the message. Focus on building rapport by complimenting the recipient's work, company, or achievements, while keeping the tone professional yet approachable. 
+  You are a professional copywriter specializing in LinkedIn connection request messages. Your task is to craft a personalized, engaging, and concise message that highlights shared interests or values, builds rapport, and encourages the recipient to accept the connection request.
 
   **Input Information**:
     - Recipient Name: ${recipientName}
@@ -15,13 +15,16 @@ export const generateConnectionPrompt = (
     - Company Name: ${companyName}
     - Company Bio: ${companyBio}
     - Company Overview: ${companyOverview}
-  
-  **Requirements**:
-    1. The message should be **1-2 lines only**, focusing on the human aspect.
-    2. Compliment the recipient's achievements or company mission.
-    3. Avoid generic statements and ensure the message feels tailored to the recipient's background.
-    4. Maintain a friendly, professional tone that encourages them to connect.
+
+  **Guidelines for the Message**:
+    1. Keep the message **1-2 lines long at max**, avoiding unnecessary details or jargon.
+    2. Use specific details from the recipient's bio, job title, or company information to make the message feel personalized and thoughtful.
+    3. Open with a genuine compliment or acknowledgment of their work, achievements, or company mission.
+    4. Avoid generic phrases; focus on what makes the recipient's profile or company unique.
+    5. Maintain a friendly, professional, and approachable tone.
+    6. Conclude in a way that encourages engagement and connection.
 
   **Output**:
-    - **Message Body**: Keep it concise, engaging, and focused on building a connection.
+    - **Message Body**: A concise, tailored LinkedIn connection request message.
+    - Closing: Include "Warmest regards, Adeel Imran" at the end of the message.
 `;
